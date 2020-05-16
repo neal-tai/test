@@ -2,9 +2,9 @@ void reverseString(char* s, int sSize){
     int i = 0;
     int j = 0;
     char a;
-    for(i = 0; i < strlen(s)/2 ; i++)
+    for(i = 0; i <sSize/2 ; i++)
     {
-        j = strlen(s)-i -1;
+        j = sSize-i -1;
         a=s[i];
         s[i]=s[j];
         s[j]= a;
