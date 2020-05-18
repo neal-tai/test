@@ -1,0 +1,22 @@
+int* createTargetArray(int* nums, int numsSize, int* index, int indexSize, int* returnSize){
+    int * a = malloc(numsSize * sizeof(int ));
+    memset(a,'\0',sizeof(int ) *numsSize);
+    int i = 0,j = 0;
+    for(i = 0; i < numsSize; i++)
+    {
+        if(i == 0)
+        {
+            a[i] = nums[i];
+        }
+        else
+        {
+            for(j = indexSize - 1;j > index[i] ;j--)
+            {
+                a[j] = a[j-1];
+            }
+            a[index[i]] = nums[i];
+        }
+    }
+    *returnSize = numsSize;
+    return a;
+}
