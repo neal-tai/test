@@ -1,0 +1,20 @@
+char ** fizzBuzz(int n, int* returnSize){
+    *returnSize = n;
+    char ** pStr = (char**)malloc(sizeof(char*) * n);
+    char s[9]={};
+    int i=0;
+    for(i = 1; i <= n; i++)
+    {   memset(s, '\0', sizeof(s));
+        if((i%3== 0) && (i%5 ==0))
+            sprintf(s,"%s","FizzBuzz");
+        else if (i %3 ==0)
+            sprintf(s,"%s","Fizz");
+        else if (i%5 == 0)
+            sprintf(s,"%s","Buzz");
+        else
+            sprintf(s,"%d",i);
+        pStr[i-1] = malloc(sizeof(s));
+        memcpy(pStr[i-1], s,  strlen(s) + 1);
+    } 
+    return pStr;
+}
