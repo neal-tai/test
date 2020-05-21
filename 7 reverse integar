@@ -1,0 +1,33 @@
+
+
+int reverse(int x){
+    int output = 0;
+    int temp =0;
+    int num= 0;
+    int positive = 0;
+     int a = abs(x);
+    
+    if(a ==x)
+    {
+        positive = 1;
+    }
+    int i =0,j=0,k=0;
+    for(j = 4; i>0;j--)
+    {
+        if(a/pow(10,j) != 0)
+            break;
+    }
+    for(i = j; i >= 0;i--)
+    {
+        temp =  pow(10, i);
+        num = a/temp;
+        if(num !=0 )
+        {
+            output += num * pow(10,k);
+            a -= pow(10,i)* num;
+            k++;
+        }
+        
+    }
+    return positive==1?output:output;
+}
