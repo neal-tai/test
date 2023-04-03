@@ -1,0 +1,22 @@
+void prime(int nu)
+{
+    int i;
+    
+    for(i =2; i<= nu;i++)
+    {
+        while(i != nu)
+        {
+            if( nu % i == 0)
+            {
+                nu = nu/i;
+            }
+             else
+            {
+                break;
+                
+            }
+            printf(" %d ", i);
+         }
+    }
+    printf(" %d ", nu);
+}
